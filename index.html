@@ -1,67 +1,67 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
   <title>My Essays</title>
+  <style>
+    body {
+      font-family: Georgia, serif;
+      font-size: 18px;
+      line-height: 1.6;
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 0 20px;
+      background-color: #fafafa;
+      color: #333;
+    }
+
+    h1 {
+      font-size: 32px;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    li {
+      margin: 10px 0;
+    }
+
+    a {
+      color: #336699;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    pre {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 20px;
+      margin-top: 30px;
+      border-radius: 4px;
+    }
+  </style>
 </head>
 <body>
-  <h1>Essays</h1>
+  <h1>My Essays</h1>
+
   <ul>
-    <li><a href="?file=algorithm.txt">algorithm</a></li>
-    <li><a href="?file=long_term_thinking.txt">long term thinking</a></li>
-    <li><a href="?file=self-sufficiency.txt">self-sufficiency</a></li>
-    <li><a href="?file=task.txt">task</a></li>
+    <li><a href="?file=essay1.txt">Essay 1</a></li>
+    <li><a href="?file=essay2.txt">Essay 2</a></li>
   </ul>
 
-  <pre id="content">Loading...</pre>
-
-  <style>
-  body {
-    font-family: Georgia, serif;
-    background: #ffffff;
-    color: #000000;
-    line-height: 1.6;
-    max-width: 700px;
-    margin: 40px auto;
-    padding: 0 20px;
-    font-size: 18px;
-  }
-
-  h1 {
-    font-size: 32px;
-    margin-bottom: 20px;
-  }
-
-  ul {
-    padding-left: 20px;
-  }
-
-  li {
-    margin: 10px 0;
-  }
-
-  a {
-    color: #0000ee;
-    text-decoration: none;
-    border-bottom: 1px solid #0000ee;
-  }
-
-  a:hover {
-    background: #f0f0f0;
-  }
-
-  pre {
-    white-space: pre-wrap;
-    word-break: break-word;
-    background: #f9f9f9;
-    padding: 20px;
-    border-left: 4px solid #ccc;
-    overflow-x: auto;
-  }
-</style>
-
+  <pre id="content">Select an essay to read.</pre>
 
   <script>
-    // Read which file to load from URL
     const params = new URLSearchParams(window.location.search);
     const file = params.get('file');
 
@@ -74,8 +74,6 @@
         .catch(() => {
           document.getElementById('content').textContent = 'Error loading file.';
         });
-    } else {
-      document.getElementById('content').textContent = 'Select an essay from the list.';
     }
   </script>
 </body>
