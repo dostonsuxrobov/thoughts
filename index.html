@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Essays</title>
+</head>
+<body>
+  <h1>Essays</h1>
+  <ul>
+    <li><a href="?file=algorithm.txt">algorithm</a></li>
+    <li><a href="?file=long_term_thinking.txt">long term thinking</a></li>
+    <li><a href="?file=self-sufficiency.txt">self-sufficiency</a></li>
+    <li><a href="?file=task.txt">task</a></li>
+  </ul>
+
+  <pre id="content">Loading...</pre>
+
+  <script>
+    // Read which file to load from URL
+    const params = new URLSearchParams(window.location.search);
+    const file = params.get('file');
+
+    if (file) {
+      fetch(file)
+        .then(res => res.text())
+        .then(text => {
+          document.getElementById('content').textContent = text;
+        })
+        .catch(() => {
+          document.getElementById('content').textContent = 'Error loading file.';
+        });
+    } else {
+      document.getElementById('content').textContent = 'Select an essay from the list.';
+    }
+  </script>
+</body>
+</html>
