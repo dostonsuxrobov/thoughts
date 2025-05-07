@@ -1,0 +1,40 @@
+task
+
+we are prone to call problems, issues, backlogs, discomfort, or any difficulties something dark, unpleasant, and undesirable. but these very problems require solutions, and by solving them, we can make our collective lives better and deliver more prosperity to our children.
+
+my opinion is that any kind of issue can be considered a task that can be solved through a three-step process. at no point in human life should one despair, fall into self-induced depression, sink into a negative cycle, or worse, regret. instead, i would offer proactive measures that can be taken at any stage of life for nearly anything. again, as in my previous essay about "algorithm.txt" this is my personal view. this is how my brain functions, which is why i'm prone to share it in a simple and honest way.
+
+step 1: search  
+in most cases, we know we have a problem but don’t really know the cause or the root of it. this applies to any scale of human organization, as well as to individuals. finding the problem itself is often the hardest part. for example, most medical knowledge is capable of dealing with a wide range of human diseases, but their identification is a major challenge. most doctors are competent enough to deal with diseases of nearly any scale, but finding them is extremely difficult. you may have a headache that could be caused by millions of reasons—even advanced brain scan machines might not be able to identify the cause.
+
+similarly, car mechanics can fix or replace any part, but what separates an expert from a newcomer is the ability to identify the problem itself. your car might make a weird noises, and knowing exactly what causes the malfunction is critical—it might even come from a completely unrelated area.
+
+financial crises can happen rapidly. most of the time, we have mechanisms to solve them, but central banks or federal reserve must make quick decisions based on very limited data. the crisis might stem from a wide range of variables or their combinations. without knowing them, institutions use existing mechanisms through trials and errors. it’s like a doctor pressing different parts of the body and asking how you feel, hoping to identify the issue.
+
+once the root cause of a problem is identified, it becomes much easier to focus resources and address it.
+
+of course, not all problems have clear answers, and not all knowledge is complete. often, we must make decisions based on incomplete data or even without knowing the root cause. in such cases, extensive use of existing knowledge, rapid questioning, trial and error becomes the only way. it's critical to actively remove unnecessary elements and focus on the critical ones. for example, fixing just a few malfunctioning parts in a car might restore the whole system. doctors can remove initial cancer cells, and even if a patient's skin looks pale, once the root cause is fixed, the rest of the body may recover by itself. similarly, the federal reserve might not understand all variables, but by adjusting interest rates, they can signal society and financial institutions to hold or accelerate actions by affecting overall inflation.
+
+step 2: constraints
+once the root cause—or at least something close to it—is identified, the next step is to think about constraints. you can rapidly iterate through engineering theories, break things, learn from them, and build again. but the same approach cannot be used with humans. you cannot, for example, break the human body—that would mean literal death. you also can’t rapidly disrupt political or social systems, because history shows that drastic changes, like "The Great Leap Forward", "One-child Policy", or Stalin’s rapid industrialization, caused massive human loss and social disruption.
+
+constraints can take many forms. one might be limited by money, time, energy, knowledge, materials, compute, specialists or regulations/laws, but as long as a person has creativity, grit, and consistent effort, they can often solve the task by using available variables.
+
+understanding constraints helps determine which steps can lead to optimal results within those boundaries. critically, constraints do not mean a dead end. as long as something doesn’t contradict fundamental laws of biology, physics, or the ecosystem, a solution can likely be found—even when constraints are massive. there is always a way.
+
+one of the reason why front line leaders are so effective is their deep knowledge of strength and constraints of their troops. Napoleon for example was a soldier himself and knew perfectly well his solders to be able to get the best out of them and at the same time know their constraints, his legendary adaptability was mostly because of his intuitive knowledge of his soldier on the ground which made possible his victories unlike monarchs who used to give orders but never were involved in ground work. leading from the front might be seen as extremely hard but this seems to be an only way to truly get sense of realistic knowledge and make decisions based on hard data on the ground which constantly changes with enormous complexities, the only way to keep up is to be involved yourself or at least feel its heartbeat every second, there is literally no other way to keep your position on top of the game without deep involvement as the moment you lose that deep sense of capacity, the moment your decision will start to get worse.      
+
+step 3: figure out  
+this step comes last because it helps improve concentration. once you know what your task is and what your constraints are, you can focus your energy on a specific number of steps to address them.
+
+the human brain is an amazing tool that can figure out how to solve nearly any task with limited knowledge. there are many ways to do this—through learning specific knowledge, trial and error, or simply connecting patterns in your mind while thinking deeply.
+
+my advice for improving in this area is to read more, listen to audiobooks instead of music, or train the brain through daily activities like puzzles, math problems, or even RTS games. it’s like a muscle—you can get better at it over time. books give you raw material, and mental stimulation gives you the strength to apply it in a wide range of scenarios. it’s similar to the relationship between protein and workouts.
+
+the most amazing thing i’ve learned repeatedly from experiences is that you can figure out what to do in situations that seem to have no solution. the more you do it, the more you believe in it.
+
+example from real life : the latches used by NASA in the Space Station cost $1,500 each. a SpaceX engineer was able to modify a latch used in a bathroom stall and create a locking mechanism that cost $30. when an engineer came to Musk’s cubicle and told him that the air-cooling system for the payload bay of the Falcon 9 would cost more than $3 million, he shouted over to Gwynne Shotwell in her adjacent cubicle to ask what an air-conditioning system for a house cost. about $6,000, she said. so the SpaceX team bought some commercial air-conditioning units and modified their pumps so they could work atop the rocket.
+
+final thoughts
+an important part of this three-step approach is recognizing that, although nearly any task can be solved, not all should be. sometimes, a single person—or even a group of dedicated individuals—can’t do anything about certain issues. in those cases, it’s better to find another task to work on. not all problems require solutions, and the biggest constraint is your time. it’s incredible to be able to solve problems and bring value, but first—as in step 1—ask yourself if it’s truly worth solving in the first place.
+
