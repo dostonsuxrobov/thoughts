@@ -2,89 +2,125 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>thoughts</title>
-<style>
-  body {
-    font-family: Georgia, serif;
-    background: #ffffff;
-    color: #000000;
-    line-height: 1.6;
-    max-width: 700px;
-    margin: 40px auto;
-    padding: 0 20px;
-    font-size: 18px;
-  }
+  <title>My Essays</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Georgia, serif;
+      background: #fff;
+      color: #000;
+    }
 
-  h1 {
-    font-size: 32px;
-    margin-bottom: 20px;
-  }
+    .container {
+      display: flex;
+      height: 100vh;
+    }
 
-  ul {
-    padding-left: 20px;
-  }
+    .sidebar {
+      width: 250px;
+      background: #f4f4f4;
+      padding: 20px;
+      box-shadow: 1px 0 5px rgba(0,0,0,0.1);
+      overflow-y: auto;
+    }
 
-  li {
-    margin: 10px 0;
-  }
+    .sidebar h2 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
 
-  a {
-    color: #0000ee;
-    text-decoration: none;
-    border-bottom: 1px solid #0000ee;
-  }
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
 
-  a:hover {
-    background: #f0f0f0;
-  }
+    .sidebar li {
+      margin: 8px 0;
+    }
 
-  pre {
-    white-space: pre-wrap;
-    word-break: break-word;
-    background: #f9f9f9;
-    padding: 20px;
-    border-left: 4px solid #ccc;
-    overflow-x: auto;
-  }
-</style>
+    .sidebar a {
+      text-decoration: none;
+      color: #333;
+    }
 
+    .sidebar a:hover {
+      text-decoration: underline;
+    }
+
+    .content {
+      flex: 1;
+      padding: 40px;
+      overflow-y: auto;
+    }
+
+    pre {
+      white-space: pre-wrap;
+      word-break: break-word;
+      background: #f9f9f9;
+      padding: 20px;
+      border-left: 4px solid #ccc;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    #searchInput {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+  </style>
 </head>
 <body>
-  <h1>thoughts</h1>
 
-    <ul>
-      <li><a href="?file=essays/essay1.txt">algorithm</a></li>
-      <li><a href="?file=essays/essay2.txt">long term thinking</a></li>
-      <li><a href="?file=essays/essay3.txt">self-sufficiency</a></li>
-      <li><a href="?file=essays/essay4.txt">task</a></li>
+<div class="container">
+  <div class="sidebar">
+    <h2>Browse</h2>
+    <input type="text" id="searchInput" placeholder="Search...">
+    <ul id="essayList">
+      <li><a href="?file=algorithm.txt">algorithm</a></li>
+      <li><a href="?file=long_term_thinking.txt">long term thinking</a></li>
+      <li><a href="?file=self-sufficiency.txt">self-sufficiency</a></li>
+      <li><a href="?file=task.txt">task</a></li>
     </ul>
+  </div>
 
+  <div class="content">
+    <pre id="content">Select an essay from the left.</pre>
+  </div>
+</div>
 
-  <pre id="content">Select an essay to read.</pre>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const fileParam = params.get('file');
 
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    const fileParam = params.get('file');
-  
-    if (fileParam) {
-      // Ensure file path starts with "essays/"
-      const file = fileParam.startsWith('essays/') ? fileParam : 'essays/' + fileParam;
-  
-      fetch(file)
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('File not found');
-          }
-          return response.text();
-        })
-        .then(text => {
-          document.getElementById('content').textContent = text;
-        })
-        .catch(error => {
-          document.getElementById('content').textContent = 'Error loading file.';
+  const contentBox = document.getElementById('content');
+  const searchInput = document.getElementById('searchInput');
+
+  if (fileParam) {
+    const file = fileParam.startsWith('essays/') ? fileParam : 'essays/' + fileParam;
+
+    fetch(file)
+      .then(response => {
+        if (!response.ok) throw new Error('Fetch error');
+        return response.text();
+      })
+      .then(text => {
+        contentBox.textContent = text;
+
+        searchInput.addEventListener('input', () => {
+          const keyword = searchInput.value.toLowerCase();
+          const lines = text.split('\n');
+          const filtered = lines.filter(line => line.toLowerCase().includes(keyword));
+          contentBox.textContent = filtered.join('\n') || '[No matches]';
         });
-    }
-  </script>
+      })
+      .catch(() => {
+        contentBox.textContent = 'Error loading file.';
+      });
+  }
+</script>
 
 </body>
 </html>
