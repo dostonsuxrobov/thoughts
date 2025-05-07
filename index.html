@@ -52,29 +52,39 @@
 <body>
   <h1>My Essays</h1>
 
-  <ul>
-    <li><a href="?file=algorithm.txt">algorithm</a></li>
-    <li><a href="?file=long_term_thinking.txt">long term thinking</a></li>
-    <li><a href="?file=self-sufficiency.txt">self-sufficiency</a></li>
-    <li><a href="?file=task.txt">task</a></li>
-  </ul>
+    <ul>
+      <li><a href="?file=essays/algorithm.txt">algorithm</a></li>
+      <li><a href="?file=essays/long_term_thinking.txt">long term thinking</a></li>
+      <li><a href="?file=essays/self-sufficiency.txt">self-sufficiency</a></li>
+      <li><a href="?file=essays/task.txt">task</a></li>
+    </ul>
+
 
   <pre id="content">Select an essay to read.</pre>
 
   <script>
     const params = new URLSearchParams(window.location.search);
-    const file = params.get('file');
-
-    if (file) {
+    const fileParam = params.get('file');
+  
+    if (fileParam) {
+      // Ensure file path starts with "essays/"
+      const file = fileParam.startsWith('essays/') ? fileParam : 'essays/' + fileParam;
+  
       fetch(file)
-        .then(res => res.text())
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('File not found');
+          }
+          return response.text();
+        })
         .then(text => {
           document.getElementById('content').textContent = text;
         })
-        .catch(() => {
+        .catch(error => {
           document.getElementById('content').textContent = 'Error loading file.';
         });
     }
   </script>
+
 </body>
 </html>
