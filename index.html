@@ -9,6 +9,32 @@
       font-family: Georgia, serif;
       background: #fff;
       color: #000;
+      /* Added for smooth transition of elements affected by sidebar */
+      transition: margin-left 0.3s ease; 
+    }
+
+    #toggleBtn {
+      position: fixed;
+      top: 20px;
+      left: 290px; /* Initial position: sidebar width + padding */
+      z-index: 1000;
+      background: #e9e9e9;
+      border: 1px solid #ccc;
+      border-left: none;
+      padding: 10px 12px;
+      cursor: pointer;
+      border-radius: 0 50% 50% 0;
+      transition: left 0.3s ease;
+      font-size: 18px;
+      line-height: 1;
+      width: 40px;
+      text-align: center;
+      box-sizing: border-box;
+    }
+
+    /* Adjust button position when sidebar is collapsed */
+    body.sidebar-collapsed #toggleBtn {
+      left: 0;
     }
 
     .container {
@@ -22,6 +48,16 @@
       padding: 20px;
       box-shadow: 1px 0 5px rgba(0,0,0,0.1);
       overflow-y: auto;
+      flex-shrink: 0; /* Prevents sidebar from shrinking if content is wide */
+      transition: width 0.3s ease, padding 0.3s ease; /* Smooth collapse animation */
+    }
+
+    /* Styles for the collapsed sidebar state */
+    body.sidebar-collapsed .sidebar {
+      width: 0;
+      padding-left: 0;
+      padding-right: 0;
+      overflow-x: hidden;
     }
 
     .sidebar h2 {
@@ -43,8 +79,10 @@
       color: #333;
     }
 
+    /* --- MODIFIED --- */
+    /* On hover, make the link bold instead of underlined */
     .sidebar a:hover {
-      text-decoration: underline;
+      font-weight: bold;
     }
 
     .content {
@@ -66,7 +104,7 @@
       max-width: 700px;
       width: 100%;
       box-shadow: 0 0 10px rgba(0,0,0,0.05);
-      border: none; /* removed the left border */
+      border: none;
     }
 
     #searchInput {
@@ -79,6 +117,8 @@
   </style>
 </head>
 <body>
+
+<button id="toggleBtn">«</button>
 
 <div class="container">
   <div class="sidebar">
@@ -100,6 +140,23 @@
 </div>
 
 <script>
+  // --- ADDED ---
+  // Logic for the new sidebar toggle button
+  const toggleBtn = document.getElementById('toggleBtn');
+  
+  toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('sidebar-collapsed');
+    
+    // Update the button's text to indicate its next action
+    if (document.body.classList.contains('sidebar-collapsed')) {
+      toggleBtn.textContent = '»';
+    } else {
+      toggleBtn.textContent = '«';
+    }
+  });
+
+
+  // Original script for loading content and searching
   const params = new URLSearchParams(window.location.search);
   const fileParam = params.get('file');
 
