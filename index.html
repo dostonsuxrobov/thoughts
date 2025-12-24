@@ -363,7 +363,7 @@
 
   <main class="main">
     <div class="content">
-      <pre id="content">←</pre>
+      <pre id="content"></pre>
     </div>
   </main>
 
@@ -459,7 +459,11 @@
 
     // Initial load
     const initialFile = getParamFile();
-    if (initialFile) loadFile(initialFile);
+    if (initialFile) {
+      loadFile(initialFile);
+    } else {
+      openMenu(); // Automatically opens the menu if no file is selected
+    }
   </script>
 </body>
 </html>
