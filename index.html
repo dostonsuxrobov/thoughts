@@ -10,8 +10,6 @@
       --foreground: 240 10% 3.9%;
       --card: 0 0% 100%;
       --card-foreground: 240 10% 3.9%;
-      --popover: 0 0% 100%;
-      --popover-foreground: 240 10% 3.9%;
       --muted: 240 4.8% 95.9%;
       --muted-foreground: 240 3.8% 46.1%;
       --border: 240 5.9% 90%;
@@ -24,8 +22,6 @@
       --foreground: 0 0% 98%;
       --card: 240 10% 3.9%;
       --card-foreground: 0 0% 98%;
-      --popover: 240 10% 3.9%;
-      --popover-foreground: 0 0% 98%;
       --muted: 240 3.7% 15.9%;
       --muted-foreground: 240 5% 64.9%;
       --border: 240 3.7% 15.9%;
@@ -48,7 +44,7 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Header with controls */
+    /* Header */
     .header {
       position: fixed;
       top: 0;
@@ -64,7 +60,6 @@
       border-bottom: 1px solid hsl(var(--border));
     }
 
-    /* Icon button base */
     .icon-btn {
       display: inline-flex;
       align-items: center;
@@ -83,7 +78,6 @@
       background: hsl(var(--muted-foreground) / 0.2);
     }
 
-    /* Theme toggle - circular style */
     .theme-btn {
       width: 32px;
       height: 32px;
@@ -102,20 +96,11 @@
       outline-offset: 2px;
     }
 
-    .icon-btn svg {
-      width: 18px;
-      height: 18px;
-    }
+    .icon-btn svg { width: 18px; height: 18px; }
+    .theme-btn svg { width: 16px; height: 16px; }
 
-    .theme-btn svg {
-      width: 16px;
-      height: 16px;
-    }
-
-    /* Menu button animation */
-    .menu-btn {
-      position: relative;
-    }
+    /* Menu button */
+    .menu-btn { position: relative; }
 
     .menu-btn .bar {
       position: absolute;
@@ -131,19 +116,9 @@
     .menu-btn .b2 { top: 17px; }
     .menu-btn .b3 { top: 23px; }
 
-    body.menu-open .menu-btn .b1 {
-      top: 17px;
-      transform: rotate(45deg);
-    }
-
-    body.menu-open .menu-btn .b3 {
-      top: 17px;
-      transform: rotate(-45deg);
-    }
-
-    body.menu-open .menu-btn .b2 {
-      opacity: 0;
-    }
+    body.menu-open .menu-btn .b1 { top: 17px; transform: rotate(45deg); }
+    body.menu-open .menu-btn .b3 { top: 17px; transform: rotate(-45deg); }
+    body.menu-open .menu-btn .b2 { opacity: 0; }
 
     /* Overlay */
     .overlay {
@@ -157,10 +132,7 @@
       z-index: 200;
     }
 
-    body.menu-open .overlay {
-      opacity: 1;
-      pointer-events: auto;
-    }
+    body.menu-open .overlay { opacity: 1; pointer-events: auto; }
 
     /* Dialog */
     .dialog {
@@ -185,15 +157,9 @@
       transform: scale(0.96);
     }
 
-    .dark .dialog {
-      box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
-    }
+    .dark .dialog { box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5); }
 
-    body.menu-open .dialog {
-      opacity: 1;
-      pointer-events: auto;
-      transform: scale(1);
-    }
+    body.menu-open .dialog { opacity: 1; pointer-events: auto; transform: scale(1); }
 
     .dialog-header {
       padding: 16px 20px;
@@ -214,36 +180,25 @@
       padding: 8px;
     }
 
-    /* Custom scrollbar */
-    .dialog-content::-webkit-scrollbar {
-      width: 8px;
-    }
-
-    .dialog-content::-webkit-scrollbar-track {
-      background: transparent;
-    }
-
+    .dialog-content::-webkit-scrollbar { width: 8px; }
+    .dialog-content::-webkit-scrollbar-track { background: transparent; }
     .dialog-content::-webkit-scrollbar-thumb {
       background: hsl(var(--border));
       border-radius: 4px;
       border: 2px solid transparent;
       background-clip: content-box;
     }
+    .dialog-content { scrollbar-width: thin; scrollbar-color: hsl(var(--border)) transparent; }
 
-    .dialog-content::-webkit-scrollbar-thumb:hover {
-      background: hsl(var(--muted-foreground) / 0.5);
-      background-clip: content-box;
-    }
-
-    .dialog-content {
-      scrollbar-width: thin;
-      scrollbar-color: hsl(var(--border)) transparent;
+    .dialog-status {
+      padding: 16px 12px;
+      font-size: 13px;
+      color: hsl(var(--muted-foreground));
+      text-align: center;
     }
 
     /* List items */
-    .list {
-      list-style: none;
-    }
+    .list { list-style: none; }
 
     .list-item {
       opacity: 0;
@@ -267,9 +222,7 @@
       transition: background-color 150ms ease;
     }
 
-    .list-link:hover {
-      background: hsl(var(--muted));
-    }
+    .list-link:hover { background: hsl(var(--muted)); }
 
     .list-link:focus-visible {
       outline: 2px solid hsl(var(--ring));
@@ -282,9 +235,7 @@
       font-variant-numeric: tabular-nums;
     }
 
-    .list-title {
-      margin-top: 2px;
-    }
+    .list-title { margin-top: 2px; }
 
     /* Main content */
     .main {
@@ -308,7 +259,27 @@
       background: transparent;
     }
 
-    /* Reduced motion */
+    /* Mobile */
+    @media (max-width: 480px) {
+      .main { padding: 68px 16px 32px; }
+
+      .content pre {
+        font-size: 15px;
+        line-height: 1.7;
+      }
+
+      .dialog {
+        width: calc(100% - 16px);
+        max-height: calc(100vh - 80px);
+        border-radius: var(--radius);
+      }
+
+      .list-link {
+        padding: 12px;
+        -webkit-tap-highlight-color: transparent;
+      }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after {
         transition-duration: 0.01ms !important;
@@ -324,9 +295,7 @@
       <span class="bar b2"></span>
       <span class="bar b3"></span>
     </button>
-
-    <button id="themeBtn" class="icon-btn theme-btn" aria-label="Toggle theme">
-    </button>
+    <button id="themeBtn" class="icon-btn theme-btn" aria-label="Toggle theme"></button>
   </header>
 
   <div id="overlay" class="overlay"></div>
@@ -336,31 +305,7 @@
       <h2 id="dialogTitle" class="dialog-title">Thoughts</h2>
     </div>
     <div class="dialog-content">
-      <ul id="essayList" class="list">
-        
-        <li class="list-item" style="--i:0"><a class="list-link" href="?file=01.01.2026.txt"><span class="list-date">01.01.2026</span><div class="list-title">beautiful transactional relationships</div></a></li>
-        <li class="list-item" style="--i:0"><a class="list-link" href="?file=12.25.25.txt"><span class="list-date">12.25.2025</span><div class="list-title">life is physics</div></a></li>
-        <li class="list-item" style="--i:0"><a class="list-link" href="?file=11.3.25.txt"><span class="list-date">11.03.2025</span><div class="list-title">perfection is bad</div></a></li>
-        <li class="list-item" style="--i:1"><a class="list-link" href="?file=11.1.25.txt"><span class="list-date">11.01.2025</span><div class="list-title">limit the scope</div></a></li>
-        <li class="list-item" style="--i:2"><a class="list-link" href="?file=10.30.25.txt"><span class="list-date">10.30.2025</span><div class="list-title">pattern of effectiveness</div></a></li>
-        <li class="list-item" style="--i:3"><a class="list-link" href="?file=10.26.25.txt"><span class="list-date">10.26.2025</span><div class="list-title">no, can't change them</div></a></li>
-        <li class="list-item" style="--i:4"><a class="list-link" href="?file=10.21.25.txt"><span class="list-date">10.21.2025</span><div class="list-title">efficiency?</div></a></li>
-        <li class="list-item" style="--i:5"><a class="list-link" href="?file=10.15.25.txt"><span class="list-date">10.15.2025</span><div class="list-title">hero fallacy</div></a></li>
-        <li class="list-item" style="--i:6"><a class="list-link" href="?file=10.14.25.txt"><span class="list-date">10.14.2025</span><div class="list-title">sleep & no</div></a></li>
-        <li class="list-item" style="--i:7"><a class="list-link" href="?file=10.12.25.txt"><span class="list-date">10.12.2025</span><div class="list-title">4 AM courage</div></a></li>
-        <li class="list-item" style="--i:12"><a class="list-link" href="?file=patterns.txt"><span class="list-date">09.23.2025</span><div class="list-title">patterns</div></a></li>
-        <li class="list-item" style="--i:10"><a class="list-link" href="?file=calm.txt"><span class="list-date">09.14.2025</span><div class="list-title">calm</div></a></li>
-        <li class="list-item" style="--i:8"><a class="list-link" href="?file=basics.txt"><span class="list-date">08.28.2025</span><div class="list-title">basics</div></a></li>
-        <li class="list-item" style="--i:9"><a class="list-link" href="?file=choice.txt"><span class="list-date">08.22.25</span><div class="list-title">choice</div></a></li>
-        <li class="list-item" style="--i:18"><a class="list-link" href="?file=no.txt"><span class="list-date">06.03.2025</span><div class="list-title">no</div></a></li>
-        <li class="list-item" style="--i:17"><a class="list-link" href="?file=adaptability.txt"><span class="list-date">06.01.2025</span><div class="list-title">adaptability</div></a></li>
-        <li class="list-item" style="--i:16"><a class="list-link" href="?file=work.txt"><span class="list-date">05.31.2025</span><div class="list-title">work</div></a></li>
-        <li class="list-item" style="--i:14"><a class="list-link" href="?file=self-sufficient.txt"><span class="list-date">04.01.2025</span><div class="list-title">self-sufficiency</div></a></li>
-        <li class="list-item" style="--i:11"><a class="list-link" href="?file=algorithm.txt"><span class="list-date">04.01.2025</span><div class="list-title">algorithm</div></a></li>
-        <li class="list-item" style="--i:13"><a class="list-link" href="?file=long-term.txt"><span class="list-date">04.01.2025</span><div class="list-title">long term thinking</div></a></li>
-        <li class="list-item" style="--i:15"><a class="list-link" href="?file=task.txt"><span class="list-date">04.01.2025</span><div class="list-title">task</div></a></li>
-        <li class="list-item" style="--i:15"><a class="list-link" href="?file=2025.txt"><span class="list-date">01.01.2025</span><div class="list-title">reconstruction demand</div></a></li>
-      </ul>
+      <ul id="essayList" class="list"></ul>
     </div>
   </div>
 
@@ -371,102 +316,141 @@
   </main>
 
   <script>
-    const body = document.body;
-    const menuBtn = document.getElementById('menuBtn');
-    const themeBtn = document.getElementById('themeBtn');
-    const overlay = document.getElementById('overlay');
-    const dialog = document.getElementById('dialog');
-    const essayList = document.getElementById('essayList');
+    // ── Config ──────────────────────────────────────────
+    // Change these to your GitHub username and repo name
+    const GITHUB_USER = 'YOUR_USERNAME';
+    const GITHUB_REPO = 'YOUR_REPO';
+    const ESSAYS_DIR  = 'essays';
+    const CACHE_KEY   = 'essays_cache';
+    const CACHE_TTL   = 1000 * 60 * 10; // 10 minutes
+
+    // ── DOM refs ────────────────────────────────────────
+    const body       = document.body;
+    const menuBtn    = document.getElementById('menuBtn');
+    const themeBtn   = document.getElementById('themeBtn');
+    const overlay    = document.getElementById('overlay');
+    const essayList  = document.getElementById('essayList');
     const contentBox = document.getElementById('content');
 
-    // Theme
+    // ── Theme ───────────────────────────────────────────
     function setTheme(dark) {
       body.classList.toggle('dark', dark);
       localStorage.setItem('theme', dark ? 'dark' : 'light');
     }
 
-    function initTheme() {
+    (function initTheme() {
       const stored = localStorage.getItem('theme');
-      if (stored) {
-        setTheme(stored === 'dark');
-      } else {
-        setTheme(window.matchMedia('(prefers-color-scheme: dark)').matches);
-      }
-    }
+      setTheme(stored ? stored === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches);
+    })();
 
-    themeBtn.addEventListener('click', () => {
-      setTheme(!body.classList.contains('dark'));
-    });
+    themeBtn.addEventListener('click', () => setTheme(!body.classList.contains('dark')));
 
-    initTheme();
+    // ── Menu ────────────────────────────────────────────
+    function openMenu()  { body.classList.add('menu-open');    menuBtn.setAttribute('aria-expanded', 'true'); }
+    function closeMenu() { body.classList.remove('menu-open'); menuBtn.setAttribute('aria-expanded', 'false'); }
 
-    // Menu
-    function openMenu() {
-      body.classList.add('menu-open');
-      menuBtn.setAttribute('aria-expanded', 'true');
-    }
-
-    function closeMenu() {
-      body.classList.remove('menu-open');
-      menuBtn.setAttribute('aria-expanded', 'false');
-    }
-
-    menuBtn.addEventListener('click', () => {
-      body.classList.contains('menu-open') ? closeMenu() : openMenu();
-    });
-
+    menuBtn.addEventListener('click', () => body.classList.contains('menu-open') ? closeMenu() : openMenu());
     overlay.addEventListener('click', closeMenu);
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
 
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeMenu();
-    });
-
-    // File loading
-    function getParamFile() {
-      const params = new URLSearchParams(window.location.search);
-      const p = params.get('file');
-      return p ? (p.startsWith('essays/') ? p : 'essays/' + p) : null;
+    // ── Filename parser ─────────────────────────────────
+    // Expected format: YYYY-MM-DD_title-words.txt
+    function parseFilename(name) {
+      const match = name.match(/^(\d{4})-(\d{2})-(\d{2})_(.+)\.txt$/);
+      if (!match) return null;
+      const [, y, m, d, slug] = match;
+      return {
+        file: name,
+        date: new Date(`${y}-${m}-${d}T00:00:00`),
+        dateStr: `${m}.${d}.${y}`,
+        title: slug.replace(/-/g, ' ')
+      };
     }
 
-    async function loadFile(file) {
+    // ── Fetch essay list from GitHub API ────────────────
+    async function fetchEssayList() {
+      // Check cache first
+      const cached = sessionStorage.getItem(CACHE_KEY);
+      if (cached) {
+        const { data, ts } = JSON.parse(cached);
+        if (Date.now() - ts < CACHE_TTL) return data;
+      }
+
+      const res = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${ESSAYS_DIR}`);
+      if (!res.ok) throw new Error('GitHub API error');
+      const files = await res.json();
+
+      const essays = files
+        .map(f => parseFilename(f.name))
+        .filter(Boolean)
+        .sort((a, b) => b.date - a.date);
+
+      sessionStorage.setItem(CACHE_KEY, JSON.stringify({ data: essays, ts: Date.now() }));
+      return essays;
+    }
+
+    // ── Render list ─────────────────────────────────────
+    function renderList(essays) {
+      essayList.innerHTML = essays.map((e, i) => `
+        <li class="list-item" style="--i:${i}">
+          <a class="list-link" href="?file=${encodeURIComponent(e.file)}">
+            <span class="list-date">${e.dateStr}</span>
+            <div class="list-title">${e.title}</div>
+          </a>
+        </li>
+      `).join('');
+    }
+
+    // ── Load essay content ──────────────────────────────
+    function getFileParam() {
+      return new URLSearchParams(window.location.search).get('file');
+    }
+
+    async function loadFile(filename) {
+      const path = filename.startsWith(ESSAYS_DIR + '/') ? filename : ESSAYS_DIR + '/' + filename;
       try {
-        const res = await fetch(file);
-        if (!res.ok) throw new Error('Fetch error');
+        const res = await fetch(path);
+        if (!res.ok) throw new Error();
         contentBox.textContent = await res.text();
       } catch {
         contentBox.textContent = 'Error loading file.';
       }
     }
 
+    // ── Navigation ──────────────────────────────────────
     essayList.addEventListener('click', (e) => {
       const a = e.target.closest('a');
       if (!a) return;
       e.preventDefault();
-
-      const url = new URL(a.getAttribute('href'), window.location.href);
-      const fileParam = url.searchParams.get('file');
-
-      if (fileParam) {
-        const file = fileParam.startsWith('essays/') ? fileParam : 'essays/' + fileParam;
-        history.pushState({ file: fileParam }, '', `?file=${encodeURIComponent(fileParam)}`);
+      const file = new URL(a.href).searchParams.get('file');
+      if (file) {
+        history.pushState({ file }, '', `?file=${encodeURIComponent(file)}`);
         loadFile(file);
       }
-
       closeMenu();
     });
 
     window.addEventListener('popstate', () => {
-      const file = getParamFile();
+      const file = getFileParam();
       if (file) loadFile(file);
     });
 
-    // Initial load
-    const initialFile = getParamFile();
-    if (initialFile) {
-      loadFile(initialFile);
-    } else {
-      openMenu(); // Automatically opens the menu if no file is selected
-    }
+    // ── Init ────────────────────────────────────────────
+    (async function init() {
+      try {
+        const essays = await fetchEssayList();
+        renderList(essays);
+      } catch {
+        essayList.innerHTML = '<li class="dialog-status">Could not load essays.</li>';
+      }
+
+      const file = getFileParam();
+      if (file) {
+        loadFile(file);
+      } else {
+        openMenu();
+      }
+    })();
   </script>
 </body>
 </html>
