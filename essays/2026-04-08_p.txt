@@ -13,4 +13,8 @@ F = ma, here mass means anything you can mobilize, raw work, money, network or a
 one can argue what if m = 0, i think its mostly impossible because even Stephen Hawking used his brain, his m was not 0 at all even for paralyzed human, as long as human is alive, m is always above 0, the only thing that can go to 0 is a, speed can be 0, you just need lay on couch. 
 if you are not dead it means m > 0 but if you are laying on couch doing nothing a = 0 which means F = 0.
 
-simpler: delete until you need to add back, use whatever you have with urgency => repeat daily, let the physics do the rest.
+simple: delete until you need to add back, use whatever you have with urgency => repeat daily, let the physics do the rest.
+
+simpler: urgency * deletion
+
+that's it.
