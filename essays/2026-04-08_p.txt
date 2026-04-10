@@ -15,6 +15,6 @@ if you are not dead it means m > 0 but if you are laying on couch doing nothing 
 
 simple: delete until you need to add back, use whatever you have with urgency => repeat daily, let the physics do the rest.
 
-simpler: deletion -> work
+simpler: deletion -> urgency
 
 that's it.
