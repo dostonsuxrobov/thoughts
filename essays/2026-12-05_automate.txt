@@ -1,0 +1,17 @@
+life is a resource management task.
+
+the currency of achievement is energy.
+
+i used to believe that achieving anything requires hard work. i was right, but i applied it wrong. achieving anything requires energy, but applying it linearly leads nowhere, or only to a local minimum.
+
+automation is the only way to compound things without giving away control or increasing complexity.
+
+automation can be anything from a basic python script to robots moving with simple servo motors. it does not need to be complex or expensive. it can be simple, fast, and cheap. most importantly, with today's availability of llms, even messy things that were once impossible to automate are now automatable with deterministic software scaffolding tools and llms, again simply, fastly and cheaply.
+
+it is also remarkably fun. life cannot possibly feel like a game if you are not upgrading levels, and the only way to upgrade life is through automation.
+
+questioning and deleting already produce massive results by themselves, but automation is the final component that truly makes life feel like a game.
+
+simply: question and simplify life, work hard, but automate harder. enjoy it like a game.
+
+simpler: delete -> work -> automate -> play
