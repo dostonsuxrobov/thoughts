@@ -6,6 +6,8 @@ if you are feeling positive, it does not always mean you are going in the right 
 
 feelings, in general, are a bad sample to measure reality.
 
+feelings != truth
+
 a better way is actually much simpler than biochemical fluctuations inside the body, which is measurements. the more focused, the better. each iteration should yield some data and check the delta between your assumptions and reality. the narrower the gap, the better.
 
 simply: make an assumption, test the theory, measure the gap, learn, try again with a better way, gradually close the gap.
